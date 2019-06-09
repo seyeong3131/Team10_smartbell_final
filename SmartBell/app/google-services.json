@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "845065394562",
+    "firebase_url": "https://smartbell-f0d56.firebaseio.com",
+    "project_id": "smartbell-f0d56",
+    "storage_bucket": "smartbell-f0d56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845065394562:android:816d4430a2b3b6bc",
+        "android_client_info": {
+          "package_name": "team10.smartbell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845065394562-nk6peupvtubssmp3j66lgn6inhri21eq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-x3c9WzhTDK5yrphjQzT8k-zxQ_3B7lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845065394562-nk6peupvtubssmp3j66lgn6inhri21eq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:background="@drawable/order_dialog">
+
+        <LinearLayout
+            android:id="@+id/dialog_order_content_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null">
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@null">
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/dialog_order_button1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/item_button_selector"
+                android:text="@string/order"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textStyle="bold" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/dialog_order_button2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/item_button_selector"
+                android:text="@string/cancel"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

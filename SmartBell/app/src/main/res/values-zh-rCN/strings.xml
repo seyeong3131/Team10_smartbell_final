@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SmartBell</string>
+    <string name="price">%.0f元</string>
+    <string name="menu1">Menu</string>
+    <string name="menu2">点单目录</string>
+    <string name="order">Order</string>
+    <string name="cancel">Cancel</string>
+    <string name="alert_order_success">点单好了.</string>
+    <string name="alert_order_failure">点但失败了.</string>
+    <string name="ok">确认</string>
+    <string name="total">Total:</string>
+</resources>

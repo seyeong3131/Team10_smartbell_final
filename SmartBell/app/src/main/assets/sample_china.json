@@ -1,0 +1,115 @@
+[
+  {
+    "name": "美式咖啡",
+    "type": 1,
+    "price": 4000,
+    "description": "一杯热咖啡用浓咖啡水"
+  },
+  {
+    "name": "冰美式咖啡",
+    "type": 4,
+    "price": 4500,
+    "description": "一杯热咖啡用浓咖啡水"
+  },
+  {
+    "name": "浓缩咖啡",
+    "price": 3000,
+    "description": "一种正宗的意大利咖啡，将热水通过高压送入精细研磨的粉末"
+  },
+  {
+    "name": "咖啡拿铁",
+    "type": 1,
+    "price": 5000,
+    "description": "使用牛奶的典型咖啡。加热牛奶，将浓缩咖啡和牛奶的比例混合到1：4."
+  },
+  {
+    "name": "冰咖啡拿铁",
+    "type": 4,
+    "price": 5500,
+    "description": "使用牛奶的典型咖啡。加热牛奶，将浓缩咖啡和牛奶的比例混合到1：4."
+  },
+  {
+    "name": "咖啡摩卡",
+    "type": 1,
+    "price": 5500,
+    "description": "咖啡加牛奶和巧克力在浓咖啡和奶油"
+  },
+  {
+    "name": "冰咖啡摩卡",
+    "type": 4,
+    "price": 5500,
+    "description": "咖啡加牛奶和巧克力在浓咖啡和奶油"
+  },
+  {
+    "name": "卡布奇诺",
+    "type": 1,
+    "price": 5000,
+    "description": "意大利咖啡撒上牛奶片"
+  },
+  {
+    "name": "冷酿造",
+    "type": 1,
+    "price": 4000,
+    "description": "可以在室温或冷水中长时间研磨磨碎的咖啡，并且感觉苦味和柔软的味道的咖啡"
+  },
+  {
+    "name": "抹茶",
+    "type": 2,
+    "price": 4000,
+    "description": "由未发酵的茶叶制成的茶"
+  },
+  {
+    "name": "黄春菊",
+    "type": 2,
+    "price": 4000,
+    "description": "杏子与菊科的代表性草药之一"
+  },
+  {
+    "name": "伯爵格雷",
+    "type": 2,
+    "price": 4500,
+    "description": "基于中国茶，焦糖berganm香和植物"
+  },
+  {
+    "name": "白茶",
+    "type": 2,
+    "price": 5000,
+    "description":"用干燥的蓬松茶制成的汽车，不干燥或摩擦幼枝"
+  },
+  {
+    "name": "普洱茶",
+    "type": 2,
+    "price": 5000,
+    "description": "通过沉积新鲜叶子发酵后的中国茶"
+  },
+  {
+    "name": "胡萝卜蛋糕",
+    "type": 3,
+    "price": 6500,
+    "description": "用胡萝卜做的牙买加和英国食物和点心"
+  },
+  {
+    "name": "提拉米苏",
+    "type": 3,
+    "price": 7000,
+    "description": "甜美，质地柔软的甜点，用咖啡，马斯卡彭奶酪等制成"
+  },
+  {
+    "name": "奶油蛋糕",
+    "type": 3,
+    "price": 7500,
+    "description": "蛋糕用大量新鲜的奶油色松糕"
+  },
+  {
+    "name": "地瓜蛋糕",
+    "type": 3,
+    "price": 7000,
+    "description": "软奶油蛋糕配软甜甘薯和淡奶油"
+  },
+  {
+    "name": "红茶",
+    "type": 3,
+    "price": 7500,
+    "description": "一种细长的塑形糕点，里面装有奶油和软糖"
+  }
+]

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>SmartBell</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content ="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+  <link rel="stylesheet" href="./jqueryMobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css">
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="./jquery/jquery-1.11.0.js"></script>
+  <script src=".jqueryMobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+
+  <script>
+    var timerId = null
+
+    function getList() {
+      $.get(`http://localhost:8001/orders`).always(data => {
+        document.getElementById("list").innerHTML = '<li>메뉴 이름 <input type="button" name="토큰 이름" value="주문완료" style="vertical-align:bottom;"></li><br>'
+      });
+    }
+
+    function startSystem() {
+        timerId = setInterval(getList, 1000);
+    }
+
+    function stopSystem() {
+        if (timerId != null)
+            clearInterval(timerId);
+    }
+  </script>
+
+</head>
+
+<body>
+  <input type="button" value="시스템 구동" onclick="startSystem();" />
+  <input type="button" value="시스템 정지" onclick="stopSystem();" />
+  <br><br>
+  
+  <div class="content" data-role="content">
+
+    <h3>주문 목록</h3>
+    <ul id="list" data-role="listview">
+    </ul>
+
+    
+    <!-- <ul data-role="listview">
+      <li><a href="#">목록</li>
+      <li><a href="#">data</li>
+    </ul> -->
+  </div>
+</body>
+
+</html>

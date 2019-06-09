@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textAllCaps="false"
+        android:textColor="@android:color/primary_text_dark"
+        android:textStyle="bold"
+        android:background="@android:color/holo_orange_light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@null"
+        android:layout_marginTop="1dp">
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/menu1_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/menu1"
+            android:textAllCaps="false"
+            android:textColor="@drawable/menu_button_selector"
+            android:textStyle="bold"
+            android:background="#ffffff" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:id="@+id/menu2_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="1dp"
+            android:gravity="center"
+            android:text="@string/menu2"
+            android:textAllCaps="false"
+            android:textColor="@drawable/menu_button_selector"
+            android:textStyle="bold"
+            android:background="#ffffff" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/activity_main_listview1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:dividerHeight="5dp"
+        android:divider="@android:color/transparent"
+        android:scrollbars="none"
+        android:background="#ffffff" />
+
+    <RelativeLayout
+        android:id="@+id/activity_main_listview2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/activity_main_listview2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:dividerHeight="5dp"
+            android:divider="@android:color/transparent"
+            android:scrollbars="none"
+            android:background="#ffffff" />
+
+        <Button
+            android:id="@+id/order_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:text="@string/order"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/order_button_selector" />
+    </RelativeLayout>
+</LinearLayout>
