@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,21 +10,21 @@
         android:layout_marginTop="15dp">
 
         <ImageView
-            android:id="@+id/adapter_main_icon_imageview"
+            android:id="@+id/adapter_order_icon_imageview"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:contentDescription="@null"
-            android:layout_gravity="center"/>
+            android:contentDescription="@null" />
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_gravity="center_vertical">
+            android:layout_weight="6"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp">
 
             <TextView
-                android:id="@+id/adapter_main_name_textview"
+                android:id="@+id/adapter_order_name_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
@@ -33,7 +33,7 @@
                 android:textAllCaps="false" />
 
             <TextView
-                android:id="@+id/adapter_main_price_textview"
+                android:id="@+id/adapter_order_price_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorAccent"
@@ -41,6 +41,27 @@
                 android:textStyle="bold"
                 android:textAllCaps="false" />
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:layout_marginStart="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="수량 : "/>
+
+            <TextView
+                android:id="@+id/adapter_order_count_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <RelativeLayout
@@ -50,10 +71,10 @@
         android:layout_marginBottom="10dp">
 
         <TextView
-            android:id="@+id/adapter_main_description_textview"
+            android:id="@+id/adapter_order_description_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/adapter_main_button"
+            android:layout_toStartOf="@id/adapter_order_button"
             android:layout_centerVertical="true"
             android:gravity="start|center_vertical"
             android:maxLines="3"
@@ -64,7 +85,7 @@
             android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/adapter_main_button"
+            android:id="@+id/adapter_order_button"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginStart="15dp"
@@ -76,4 +97,5 @@
             android:textAllCaps="false"
             android:background="@drawable/item_button_selector" />
     </RelativeLayout>
+
 </LinearLayout>

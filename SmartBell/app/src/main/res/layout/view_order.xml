@@ -17,6 +17,17 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/view_order_content_middle_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end|center_vertical"
+        android:textColor="#999999"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:textStyle="normal"/>
+
+    <TextView
         android:id="@+id/view_order_content_end_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

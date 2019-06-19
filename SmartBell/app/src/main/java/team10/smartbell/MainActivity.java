@@ -3,6 +3,7 @@ package team10.smartbell;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -10,9 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
-    private MainAdapter adapter1, adapter2;
+    private MainAdapter adapter1;
+    private MainOrderAdapter adapter2;
 
-    private List<Menu> orders;
+    private ArrayList<OrderedMenu> orderList;
+    private ArrayList<Integer> orderOrder;
 
 
     @Override
@@ -26,13 +29,14 @@ public class MainActivity extends Activity {
         ListView listView2 = findViewById(R.id.activity_main_listview2);
 
         adapter1 = new MainAdapter(this);
+        init();
         listView1.setAdapter(adapter1);
 
-        adapter2 = new MainAdapter(this);
+        adapter2 = new MainOrderAdapter(this);
         listView2.setAdapter(adapter2);
 
-        adapter1.setListener("点单", this::setListener1);
-        adapter2.setListener("取消", this::setListener2);
+        adapter1.setListener("주문(点单)", this::setListener1);
+        adapter2.setListener("취소(取消)", this::setListener2);
 
         findViewById(R.id.menu1_button).setOnClickListener(v -> {
             listView1.setVisibility(View.VISIBLE);
@@ -43,17 +47,19 @@ public class MainActivity extends Activity {
             listView2.setVisibility(View.VISIBLE);
             listView1.setVisibility(View.GONE);
 
-            adapter2.setItems(orders);
+            Log.d("OrderList", orderOrder.toString());
+            adapter2.setItems(orderList);
         });
 
         findViewById(R.id.order_button).setOnClickListener(v -> {
-            if (orders.size() == 0) return;
+            if (orderList.size() == 0) return;
 
-            new OrderDialog(this, orders, () ->
-                    ApiManager.shared().order(orders, (error, response) -> {
+            new OrderDialog(this, orderList, () ->
+                    ApiManager.shared().order(orderList, (error, response) -> {
                         if (error == null) {
-                            orders.clear();
-                            adapter2.setItems(orders);
+//                            orders.clear();
+//                            adapter2.setItems(orders);
+                            adapter2.setItems(orderList);
                             adapter2.notifyDataSetChanged();
                         }
 
@@ -66,19 +72,35 @@ public class MainActivity extends Activity {
     }
 
     private void init() {
-        orders = new ArrayList<>();
         adapter1.setItems(Menu.sample(this));
+
+        orderList = new ArrayList<OrderedMenu>();
+        orderOrder = new ArrayList<Integer>();
     }
 
     @SuppressWarnings("unused")
     private void setListener1(int position, Menu menu) {
-        orders.add(menu);
+//        orders.add(menu);
+        Log.d("Order", String.valueOf(position));
+        if (!orderOrder.contains(position)) {
+            OrderedMenu orderedMenu = new OrderedMenu(menu.getTypeAsInt(), menu.getName(), menu.getPrice(), menu.getDescription());
+            orderList.add(orderedMenu);
+            orderOrder.add(position);
+        }
+        else {
+            int index = orderOrder.indexOf(position);
+            Log.d("Ordercheck", String.valueOf(index));
+            orderList.get(index).addCount();
+        }
     }
 
     @SuppressWarnings("unused")
-    private void setListener2(int position, Menu menu) {
-        orders.remove(position);
-        adapter2.setItems(orders);
+    private void setListener2(int position, OrderedMenu menu) {
+
+        orderOrder.remove(position);
+        orderList.remove(position);
+
+        adapter2.setItems(orderList);
         adapter2.notifyDataSetChanged();
     }
 
