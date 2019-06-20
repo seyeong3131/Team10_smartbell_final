@@ -92,7 +92,7 @@ class ApiManager {
     }
 
 
-    void order(List<Menu> orders, BiConsumer<Throwable, Response<Boolean>> callback) {
+    void order(List<OrderedMenu> orders, BiConsumer<Throwable, Response<Boolean>> callback) {
         try {
             FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
                 if (task.getResult() == null) return;
@@ -100,8 +100,8 @@ class ApiManager {
                 String token = task.getResult().getToken();
 
                 JsonArray array = new JsonArray();
-                for (Menu menu : orders)
-                    array.add(menu.getName());
+                for (OrderedMenu menu : orders)
+                    array.add(menu.getName() + menu.getCount());
 
                 JsonObject object = new JsonObject();
                 object.add("menus", array);

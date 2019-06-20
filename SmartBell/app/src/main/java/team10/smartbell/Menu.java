@@ -30,6 +30,7 @@ public class Menu {
     private float   price;
     private String  description;
 
+    public int getTypeAsInt() { return type; }
 
     public Type getType() {
         return Type.values()[type - 1];

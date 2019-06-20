@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 class OrderDialog extends Dialog {
-    OrderDialog(Context context, List<Menu> orders, Runnable listener) {
+    OrderDialog(Context context, List<OrderedMenu> orders, Runnable listener) {
         super(context);
         setContentView(R.layout.order_dialog);
         setCancelable(false);
@@ -30,22 +30,24 @@ class OrderDialog extends Dialog {
         initOrder(orders);
     }
 
-    private void initOrder(List<Menu> orders) {
+    private void initOrder(List<OrderedMenu> orders) {
         ViewGroup layout = findViewById(R.id.dialog_order_content_layout);
 
         float total = 0.f;
 
-        for (Menu menu : orders) {
+        for (OrderedMenu menu : orders) {
             View view = LayoutInflater.from(getContext()).inflate(R.layout.view_order, layout, false);
             layout.addView(view);
 
             TextView startView  = view.findViewById(R.id.view_order_content_start_textview);
+            TextView middleView = view.findViewById(R.id.view_order_content_middle_textview);
             TextView endView    = view.findViewById(R.id.view_order_content_end_textview);
 
             startView.setText(menu.getName());
-            endView.setText(getContext().getString(R.string.price, menu.getPrice()));
+            middleView.setText(String.valueOf(menu.getCount()));
+            endView.setText(getContext().getString(R.string.price, menu.getPrice() * menu.getCount()));
 
-            total += menu.getPrice();
+            total += menu.getPrice() * menu.getCount();
         }
 
         View view = LayoutInflater.from(getContext()).inflate(R.layout.view_order, layout, false);
